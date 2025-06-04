@@ -1,0 +1,288 @@
+App name:
+
+http://127.0.0.1:5000/api/auth/login
+
+{
+    "username":"darey6270",
+    "password":"12345678"
+}
+
+http://127.0.0.1:5000/api/auth/register
+
+{
+    "username":"darey6270",
+    "password":"12345678"
+}
+
+POST /api/auth/request-password-reset – Send reset link or token.
+{
+  "username": "darey6270"
+}
+return reset-token
+{
+    "message": "Password reset token generated",
+    "resetToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4M2FkYTMyNGYzYjRmMzliZThmNzJlMyIsImlhdCI6MTc0ODY5NjcyMSwiZXhwIjoxNzQ4Njk3NjIxfQ.cEkLqbMZmGLEi0H5a19SzW4uJxPzInPYD2GRNHLmPeE"
+}
+
+
+
+POST /api/auth/reset-password – Accept new password and update user.
+
+postman setting
+body(raw and Json)
+
+http://127.0.0.1:5000/api/stocks
+JSON Payload (for POST /api/stocks)
+{
+  "OrderCode": "ORD-001",
+  "CaptainCode": "CAPT-1",
+  "StockName": "Red Wine  Bottle",
+  "Qty": 2,
+  "Unit": "bottle",
+  "TotalQty": 2,
+  "Rate": 45.0,
+  "Amount": 90.0,
+  "CostAmount": 60.0,
+  "ReceiptBy": "John Doe",
+  "SalesPoint": "Lounge A",
+  "ShiftNo": "S1",
+  "Department": "Bar"
+}
+
+update reqest put:http://127.0.0.1:5000/api/stocks/683adfec4f3b4f39be8f72e6
+
+{
+  "OrderCode": "ST-ORD-1001",
+  "CaptainCode": "CAP-009",
+  "Total": 150,
+  "Cash": 50,
+  "Pos": 30,
+  "Transfer": 20,
+  "Credit": 40,
+  "Balance": 10,
+  "Tax": 15,
+  "TaxPercent": 10,
+  "TotalSubTax": 135,
+  "Discount": 5,
+  "ReceiptBy": "Jane Smith",
+  "SalesPoint": "Store A",
+  "ShiftNo": "S3",
+  "Department": "Retail"
+}
+
+get request put:http://127.0.0.1:5000/api/stocks/683adfec4f3b4f39be8f72e6
+
+output 
+{
+    "_id": "683adfec4f3b4f39be8f72e6",
+    "OrderCode": "ORD-001",
+    "CaptainCode": "CAPT-1",
+    "StockName": "Red Wine  Bottle",
+    "Qty": 2,
+    "Unit": "bottle",
+    "TotalQty": 2,
+    "Rate": 45,
+    "Amount": 90,
+    "CostAmount": 60,
+    "ReceiptBy": "John Doe",
+    "SalesPoint": "Lounge A",
+    "ShiftNo": "S1",
+    "Department": "Bar now",
+    "Date": "2025-05-31T10:54:36.968Z",
+    "ShiftDate": "2025-05-31T10:54:36.968Z",
+    "createdAt": "2025-05-31T10:54:36.970Z",
+    "updatedAt": "2025-05-31T11:13:37.386Z",
+    "__v": 0
+}
+
+get all data request:get http://127.0.0.1:5000/api/stocks
+
+Post request:http://127.0.0.1:5000/api/store-receipts
+{
+  "OrderCode": "ST-ORD-1001",
+  "CaptainCode": "CAP-009",
+  "Total": 150,
+  "Cash": 50,
+  "Pos": 30,
+  "Transfer": 20,
+  "Credit": 40,
+  "Balance": 10,
+  "Tax": 15,
+  "TaxPercent": 10,
+  "TotalSubTax": 135,
+  "Discount": 5,
+  "ReceiptBy": "Jane Smith",
+  "SalesPoint": "Store A",
+  "ShiftNo": "S3",
+  "Department": "Retail"
+}
+
+update request put,http://127.0.0.1:5000/api/store-receipts/683ae3e14f3b4f39be8f72e8
+
+{
+    "_id": "683ae3e14f3b4f39be8f72e8",
+    "OrderCode": "ST-ORD-1001gjhgw",
+    "CaptainCode": "CAP-009jhgdjhd",
+    "Total": 150,
+    "Cash": 50,
+    "Pos": 30,
+    "Transfer": 20,
+    "Credit": 40,
+    "Balance": 10,
+    "Tax": 15,
+    "TaxPercent": 10,
+    "TotalSubTax": 135,
+    "Discount": 5,
+    "ReceiptBy": "Jane Smith",
+    "SalesPoint": "Store A",
+    "ShiftNo": "S3",
+    "Department": "Retail",
+    "Date": "2025-05-31T11:11:29.266Z",
+    "ShiftDate": "2025-05-31T11:11:29.266Z",
+    "createdAt": "2025-05-31T11:11:29.267Z",
+    "updatedAt": "2025-05-31T11:21:32.289Z",
+    "__v": 0
+}
+
+get a request get,http://127.0.0.1:5000/api/store-receipts/683ae3e14f3b4f39be8f72e8
+
+get all data request get,http://127.0.0.1:5000/api/store-receipts
+
+
+post request,http://127.0.0.1:5000/api/store-stocks
+
+{
+  "OrderCode": "STK-ORD-002",
+  "CaptainCode": "CAP-888",
+  "StockName": "Chocolate Bar",
+  "Qty": 5,
+  "Unit": "pcs",
+  "TotalQty": 5,
+  "Rate": 3.5,
+  "Amount": 17.5,
+  "CostAmount": 10,
+  "ReceiptBy": "Ali Khan",
+  "SalesPoint": "Store B",
+  "ShiftNo": "S2",
+  "Department": "Snacks"
+}
+
+update a specific data ,put:http://127.0.0.1:5000/api/store-stocks/683ae8944f3b4f39be8f72f0
+
+{
+  "OrderCode": "STK-ORD-002",
+  "CaptainCode": "CAP-888 dkj",
+  "StockName": "Chocolate Bar",
+  "Qty": 5,
+  "Unit": "pcs",
+  "TotalQty": 5,
+  "Rate": 3.5,
+  "Amount": 17.5,
+  "CostAmount": 10,
+  "ReceiptBy": "Ali Khan",
+  "SalesPoint": "Store B",
+  "ShiftNo": "S24",
+  "Department": "Snacks new"
+}
+
+get a specific data ,get request:http://127.0.0.1:5000/api/store-stocks/683ae8944f3b4f39be8f72f0
+
+get all data request, get:http://127.0.0.1:5000/api/store-stocks
+
+
+post request, http://127.0.0.1:5000/api/suite-checkin
+{
+  "BookingStatus": "Confirmed",
+  "CustomerName": "Amaka Obi",
+  "RoomCategory": "Suite",
+  "RoomPrice": 50000,
+  "Period": 3,
+  "Rate": 1,
+  "Amount": 150000,
+  "Discount": 5000,
+  "Total": 145000,
+  "Cash": 100000,
+  "Pos": 20000,
+  "Transfer": 15000,
+  "Balance": 10000,
+  "Credit": 0,
+  "UserName": "ManagerA",
+  "ShiftDate": "2025-05-30T00:00:00Z",
+  "CleanStatus": "Cleaned"
+}
+
+get a specific get:http://127.0.0.1:5000/api/suite-checkin/683aed224f3b4f39be8f72f8
+
+update a specific data, put:http://127.0.0.1:5000/api/suite-checkin/683aed224f3b4f39be8f72f8
+
+{
+  "BookingStatus": "Confirmed",
+  "CustomerName": "Amaka Obi kjdkjd",
+  "RoomCategory": "Suite",
+  "RoomPrice": 50000,
+  "Period": 3,
+  "Rate": 1,
+  "Amount": 150000,
+  "Discount": 5000,
+  "Total": 145000,
+  "Cash": 100000,
+  "Pos": 20000,
+  "Transfer": 15000,
+  "Balance": 10000,
+  "Credit": 0,
+  "UserName": "ManagerA",
+  "ShiftDate": "2025-05-30T00:00:00Z",
+  "CleanStatus": "Cleaned"
+}
+
+get all data, get:http://127.0.0.1:5000/api/suite-checkin
+
+
+post request:http://127.0.0.1:5000/api/receipts
+
+{
+  "OrderCode": "ORD123456",
+  "CaptainCode": "CAPT001",
+  "Total": 5000,
+  "Cash": 2000,
+  "Pos": 1500,
+  "Transfer": 1000,
+  "Credit": 500,
+  "Balance": 0,
+  "Tax": 250,
+  "TaxPercent": 5,
+  "TotalSubTax": 4750,
+  "Discount": 0,
+  "ReceiptBy": "admin",
+  "SalesPoint": "MainHall",
+  "ShiftNo": "SHIFT42",
+  "Department": "Food & Beverage"
+}
+
+update a specific data, put:http://127.0.0.1:5000/api/receipts/683af65e4f3b4f39be8f7306
+
+{
+  "OrderCode": "ORD123456",
+  "CaptainCode": "CAPT001",
+  "Total": 5000,
+  "Cash": 2000,
+  "Pos": 1500,
+  "Transfer": 1000,
+  "Credit": 500,
+  "Balance": 0,
+  "Tax": 250,
+  "TaxPercent": 5,
+  "TotalSubTax": 4750,
+  "Discount": 0,
+  "ReceiptBy": "admin hbsjbskj",
+  "SalesPoint": "MainHall kjsakjs",
+  "ShiftNo": "SHIFT42",
+  "Department": "Food & Beverage"
+}
+
+get a specific data,get:http://127.0.0.1:5000/api/receipts/683af65e4f3b4f39be8f7306
+
+get a all data,http://127.0.0.1:5000/api/receipts
+
+
+
