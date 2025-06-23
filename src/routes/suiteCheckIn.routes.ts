@@ -12,12 +12,12 @@ import { authenticate } from '../middlewares/auth.middleware';
 
 const router = Router();
 
-// router.use(authenticate);
+router.use(authenticate);
 
-router.post('/', createSuiteCheckIn);
+// router.post('/', createSuiteCheckIn);
 router.get('/', getSuiteCheckIns);
 router.get('/:id', getSuiteCheckIn);
-router.put('/:id', updateSuiteCheckIn);
-router.delete('/:id', deleteSuiteCheckIn);
+// router.put('/:id', updateSuiteCheckIn);
+// router.delete('/:id', deleteSuiteCheckIn);
 router.get('/filter/by-shift-date', geSuiteCheckInByShiftDateRange);
 export default router;

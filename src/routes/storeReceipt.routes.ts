@@ -11,13 +11,13 @@ import { authenticate } from '../middlewares/auth.middleware';
 
 const router = Router();
 
-// router.use(authenticate);
+router.use(authenticate);
 
-router.post('/', createStoreReceipt);
+// router.post('/', createStoreReceipt);
 router.get('/', getStoreReceipts);
 router.get('/:id', getStoreReceipt);
-router.put('/:id', updateStoreReceipt);
-router.delete('/:id', deleteStoreReceipt);
+// router.put('/:id', updateStoreReceipt);
+// router.delete('/:id', deleteStoreReceipt);
 router.get('/filter/by-shift-date', getStockReceiptsByShiftDateRange);
 
 export default router;

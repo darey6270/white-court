@@ -14,13 +14,13 @@ import { authenticate } from '../middlewares/auth.middleware';
 
 const router = Router();
 
-// router.use(authenticate);
+router.use(authenticate);
 
-router.post('/', createReceipt);
+// router.post('/', createReceipt);
 router.get('/', getReceipts);
 router.get('/:id', getReceipt);
-router.put('/:id', updateReceipt);
-router.delete('/:id', deleteReceipt);
+// router.put('/:id', updateReceipt);
+// router.delete('/:id', deleteReceipt);
 router.get('/filter/by-shift-date', getReceiptsByShiftDateRange);
 router.get('/filter/receipts', getFilteredReceipts);
 

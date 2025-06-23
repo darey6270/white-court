@@ -11,13 +11,13 @@ import { authenticate } from '../middlewares/auth.middleware';
 
 const router = Router();
 
-// router.use(authenticate);
+router.use(authenticate);
 
-router.post('/', createStoreStock);
+// router.post('/', createStoreStock);
 router.get('/', getStoreStocks);
 router.get('/:id', getStoreStock);
-router.put('/:id', updateStoreStock);
-router.delete('/:id', deleteStoreStock);
+// router.put('/:id', updateStoreStock);
+// router.delete('/:id', deleteStoreStock);
 router.get('/filter/by-shift-date', getStoreStocksByShiftDateRange);
 
 export default router;
